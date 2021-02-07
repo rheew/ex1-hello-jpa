@@ -16,9 +16,11 @@ public class JpaMain {
 
         try {
 
-            Member member = em.find(Member.class,150L);
-            member.setName("ZZZaa");
+            Member member = Member.builder()
+                    .username("C")
+                    .build();
 
+            em.persist(member);
             tx.commit();
 
         } catch (Exception e) {

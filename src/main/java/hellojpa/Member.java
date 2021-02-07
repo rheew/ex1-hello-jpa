@@ -1,7 +1,6 @@
 package hellojpa;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.*;
 
@@ -10,13 +9,16 @@ import lombok.*;
 public class Member {
 
     @Id
-    private Long id;
-    private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
+
+    @Column(name = "name", nullable = false)
+    private String username;
 
     @Builder
-    public Member(Long id, String name) {
+    public Member(String id, String username) {
         this.id = id;
-        this.name = name;
+        this.username = username;
     }
 
 }
