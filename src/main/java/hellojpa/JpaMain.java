@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.Arrays;
+import java.util.List;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -15,12 +17,12 @@ public class JpaMain {
         tx.begin();
 
         try {
+//            Member member1 = new Member(0L, "member200");
 
-            Member member = Member.builder()
-                    .username("C")
-                    .build();
+//            em.persist(member1);
+//            em.flush();
 
-            em.persist(member);
+            System.out.println("===============");
             tx.commit();
 
         } catch (Exception e) {
@@ -31,5 +33,4 @@ public class JpaMain {
 
         emf.close();
     }
-
 }
