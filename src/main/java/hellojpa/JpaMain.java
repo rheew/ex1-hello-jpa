@@ -17,10 +17,13 @@ public class JpaMain {
         tx.begin();
 
         try {
-//            Member member1 = new Member(0L, "member200");
+            Member member1 = new Member();
 
-//            em.persist(member1);
-//            em.flush();
+            member1.setId(1L);
+            member1.setUsername("z");
+            member1.setRoleType(RoleType.USER);
+
+            em.persist(member1);
 
             System.out.println("===============");
             tx.commit();

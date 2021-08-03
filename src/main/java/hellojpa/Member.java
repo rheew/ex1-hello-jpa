@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 import lombok.*;
 
+import java.util.Date;
+
 @Entity
 @Getter @Setter @NoArgsConstructor
 @AllArgsConstructor
@@ -11,7 +13,15 @@ public class Member {
 
     @Id
     private Long id;
-    private String name;
-    private int age;
-
+    @Column(name = "name")
+    private String username;
+    private Integer age;
+    @Enumerated(EnumType.ORDINAL)
+    private RoleType roleType;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+    @Lob
+    private String description;
 }
