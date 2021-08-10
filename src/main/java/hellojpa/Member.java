@@ -9,6 +9,7 @@ import java.util.Date;
 @Entity
 @Getter @Setter @NoArgsConstructor
 @AllArgsConstructor
+@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq")
 public class Member {
 
     @Id
